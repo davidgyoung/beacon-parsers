@@ -1,0 +1,3 @@
+include ':lib'
+project(":").name = "beacon-parsers-root"
+project(":lib").name = "beacon-parsers"
