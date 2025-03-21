@@ -9,9 +9,8 @@ An Android library defining a variety of beacon parsers for use with the Android
 
 ## Setup
 
-1. Copy the beaconparsers.aar file into your project's libs folder
 
-2. Make sure your libs folder is defined as a flatDir responsitory in your top-level build.gradle file:
+1. Make sure the MavenCentral repository is in your top-level build.gradle file:
 
 ```
 allprojects {
