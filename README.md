@@ -18,9 +18,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        flatDir {
-            dirs 'libs'
-        }
     }
 }
 ```
@@ -28,8 +25,8 @@ allprojects {
 3. Add the an import to your build.gradle file next to where you import the Android Beacon Library:
 
 ```
-    implementation 'org.altbeacon:android-beacon-library:2.20.2'
-    implementation 'com.davidgyoungtech:beaconparsers:1.0@aar'
+     implementation('com.davidgyoungtech:beacon-parsers:1.0')
+     implementation('org.altbeacon:android-beacon-library:2+')
 ```
 
 4. Access the beacon parsers in your source code like this:
@@ -38,7 +35,9 @@ allprojects {
 import com.davidgyoungtech.beaconparsers.*
 
 ...
-beaconManager.getBeaconParsers().add(IBeaconParser())
+val region = BeaconRegion("wildcard iBeacon", IBeaconParser(), null, null, null)
+val region2 = BeaconRegion("wildcard Eddystone UID", EddystoneUidParser(), null, null, null)
+val region3 = BeaconRegion("wildcard iBeacon", EddystoneUrlParser(), null, null, null)
 
 ```
 
